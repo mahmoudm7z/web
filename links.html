@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X'wafffle Links</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .linktree-page {
+      padding: 4rem 2rem;
+      background: white;
+      min-height: calc(100vh - 140px);
+    }
+    .linktree-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: #333;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .link-cards {
+      display: grid;
+      gap: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .link-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: #fff;
+      border: 1px solid rgba(211, 47, 47, 0.15);
+      border-radius: 14px;
+      color: #d32f2f;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      font-weight: 600;
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    .link-icon {
+      font-size: 1.5rem;
+    }
+    .link-footer {
+      background: white;
+      border-top: 1px solid rgba(211, 47, 47, 0.15);
+      color: #666;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .about-section {
+      max-width: 700px;
+      margin: 2rem auto 0;
+      background: #fff;
+      border: 1px solid rgba(211, 47, 47, 0.12);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      color: #333;
+    }
+    .about-section h2 {
+      margin-bottom: 0.75rem;
+      color: #d32f2f;
+    }
+    .about-section p {
+      line-height: 1.8;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon">🧇</span>
+                    <span class="logo-text">X'wafffle</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                   <li><a href="links.html" class="active">Contact</a></li>
+
+                </ul>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="cart-symbol">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  <main class="linktree-page">
+    <p class="linktree-intro">Connect with X'wafffle Café, place an order, or find us on social media.</p>
+    <div class="link-cards">
+      <a href="https://wa.me/201141922647?text=Hello%20X%27wafffle%20Cafe%21%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>Order on WhatsApp</span>
+        <span class="link-icon">💬</span>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>Instagram</span>
+        <span class="link-icon">📸</span>
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>TikTok</span>
+        <span class="link-icon">🎵</span>
+      </a>
+      <a href="https://maps.app.goo.gl/oG8L3KAS2a5UMtnE7?g_st=iw" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>Google Maps Location 1</span>
+        <span class="link-icon">📍</span>
+      </a>
+      <a href="https://maps.app.goo.gl/w8eDUBsjM6CGT5X36?g_st=iw" target="_blank" rel="noopener noreferrer" class="link-card">
+        <span>Google Maps Location 2</span>
+        <span class="link-icon">📍</span>
+      </a>
+      <a href="tel:+201141922647" class="link-card">
+        <span>Call the café</span>
+        <span class="link-icon">📞</span>
+      </a>
+    </div>
+    <section id="about" class="about-section">
+      <h2>About X'wafffle</h2>
+      <p>Welcome to X'wafffle Café — where every waffle is made fresh, with rich coffee and warm service. Use this page to order directly on WhatsApp, call the cafe, or find us on social media.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer link-footer">
+    <p>Minimal red & white design with quick access to your favorite X'wafffle links.</p>
+  </footer>
+</body>
+</html>

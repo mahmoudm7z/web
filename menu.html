@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - X'wafffle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon">🧇</span>
+                    <span class="logo-text">X'wafffle</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="cart-symbol">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="container">
+            <h1 class="page-title">Our Menu</h1>
+            
+            <!-- Category Filter -->
+            <div class="filter-container">
+                <h3>Filter by Category:</h3>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All Items</button>
+                    <button class="filter-btn" data-category="burgers">Burgers</button>
+                    <button class="filter-btn" data-category="drinks">Drinks</button>
+                    <button class="filter-btn" data-category="desserts">Desserts</button>
+                    <button class="filter-btn" data-category="salads">Salads</button>
+                    <button class="filter-btn" data-category="appetizers">Appetizers</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 X'wafffle Cafe. All rights reserved. Order with us on WhatsApp!</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const MENU_ITEMS = [
+            // Burgers
+            { id: 1, name: 'Classic Cheeseburger', price: 8.99, category: 'burgers', emoji: '🍔', description: 'Juicy beef with cheese and fresh toppings' },
+            { id: 2, name: 'Bacon Burger', price: 10.99, category: 'burgers', emoji: '🍔', description: 'Premium beef with crispy bacon' },
+            { id: 3, name: 'Double Deluxe', price: 12.99, category: 'burgers', emoji: '🍔', description: 'Two patties with extra cheese' },
+            
+            // Drinks
+            { id: 4, name: 'Coca Cola', price: 2.99, category: 'drinks', emoji: '🥤', description: 'Classic cold soda' },
+            { id: 5, name: 'Orange Juice', price: 3.99, category: 'drinks', emoji: '🧃', description: 'Fresh squeezed' },
+            { id: 6, name: 'Iced Coffee', price: 4.99, category: 'drinks', emoji: '☕', description: 'Cold and refreshing' },
+            { id: 7, name: 'Milkshake', price: 5.99, category: 'drinks', emoji: '🥛', description: 'Vanilla, Chocolate, or Strawberry' },
+            
+            // Desserts
+            { id: 8, name: 'Chocolate Cake', price: 5.99, category: 'desserts', emoji: '🍰', description: 'Rich and moist' },
+            { id: 9, name: 'Cheesecake', price: 6.99, category: 'desserts', emoji: '🍰', description: 'Creamy and delightful' },
+            { id: 10, name: 'Ice Cream', price: 4.99, category: 'desserts', emoji: '🍦', description: 'Multiple flavors available' },
+            
+            // Salads
+            { id: 11, name: 'Caesar Salad', price: 7.99, category: 'salads', emoji: '🥗', description: 'Fresh romaine with parmesan' },
+            { id: 12, name: 'Garden Salad', price: 6.99, category: 'salads', emoji: '🥗', description: 'Mixed greens and vegetables' },
+            { id: 13, name: 'Grilled Chicken Salad', price: 9.99, category: 'salads', emoji: '🍗', description: 'Protein-rich and healthy' },
+            
+            // Appetizers
+            { id: 14, name: 'French Fries', price: 3.99, category: 'appetizers', emoji: '🍟', description: 'Crispy golden fries' },
+            { id: 15, name: 'Chicken Wings', price: 7.99, category: 'appetizers', emoji: '🍗', description: 'Buffalo or BBQ sauce' },
+            { id: 16, name: 'Onion Rings', price: 4.99, category: 'appetizers', emoji: '🧅', description: 'Golden and crispy' },
+            { id: 17, name: 'Mozzarella Sticks', price: 5.99, category: 'appetizers', emoji: '🧀', description: 'Melted cheese goodness' }
+        ];
+
+        let currentFilter = 'all';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMenu('all');
+            attachFilterListeners();
+            updateCartCount();
+        });
+
+        function attachFilterListeners() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderMenu(e.target.dataset.category);
+                });
+            });
+        }
+
+        function renderMenu(category) {
+            currentFilter = category;
+            const items = category === 'all' ? MENU_ITEMS : MENU_ITEMS.filter(item => item.category === category);
+            const menuGrid = document.getElementById('menuGrid');
+            
+            menuGrid.innerHTML = items.map(item => `
+                <div class="menu-item">
+                    <div class="item-emoji-large">${item.emoji}</div>
+                    <h3>${item.name}</h3>
+                    <p class="item-description">${item.description}</p>
+                    <p class="item-price">$${item.price}</p>
+                    <button class="btn btn-primary" onclick="addItemAndNotify(${item.id}, '${item.name}', ${item.price})">
+                        Add to Cart
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function addItemAndNotify(id, name, price) {
+            addToCart({ id, name, price });
+            showToast(`✅ ${name} added to cart!`);
+            updateCartCount();
+        }
+    </script>
+</body>
+</html>

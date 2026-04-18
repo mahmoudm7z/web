@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X'wafffle - Cafe & Waffles</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon">🧇</span>
+                    <span class="logo-text">X'wafffle</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="links.html">Contact</a></li>
+                </ul>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="cart-symbol">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to X'wafffle</h1>
+            <p class="hero-subtitle">Fresh waffles, coffee, and cozy cafe treats</p>
+            <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">🧇</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose X'wafffle?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Service</h3>
+                    <p>Quick preparation and delivery</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Quality Food</h3>
+                    <p>Fresh ingredients every day</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Best Prices</h3>
+                    <p>Affordable meals for everyone</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Ordering</h3>
+                    <p>Order via WhatsApp instantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section class="menu-preview">
+        <div class="container">
+            <h2 class="section-title">Popular Items</h2>
+            <div class="menu-preview-grid" id="menuPreviewGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 X'wafffle Cafe. All rights reserved. Order with us on WhatsApp!</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadMenuPreview);
+        
+        function loadMenuPreview() {
+            const preview = document.getElementById('menuPreviewGrid');
+            const sampleItems = [
+                { id: 1, name: 'Cheeseburger', price: 8.99, category: 'Burgers', emoji: '🍔' },
+                { id: 2, name: 'Coca Cola', price: 2.99, category: 'Drinks', emoji: '🥤' },
+                { id: 3, name: 'Chocolate Cake', price: 5.99, category: 'Desserts', emoji: '🍰' },
+                { id: 4, name: 'Caesar Salad', price: 7.99, category: 'Salads', emoji: '🥗' }
+            ];
+            
+            preview.innerHTML = sampleItems.map(item => `
+                <div class="menu-item-card">
+                    <div class="item-emoji">${item.emoji}</div>
+                    <h3>${item.name}</h3>
+                    <p class="category">${item.category}</p>
+                    <p class="price">$${item.price}</p>
+                    <button class="btn btn-small" onclick="addToCartFromPreview(${item.id}, '${item.name}', ${item.price})">
+                        Add to Cart
+                    </button>
+                </div>
+            `).join('');
+        }
+        
+        function addToCartFromPreview(id, name, price) {
+            addToCart({ id, name, price });
+            showToast(`${name} added to cart!`);
+        }
+    </script>
+</body>
+</html>

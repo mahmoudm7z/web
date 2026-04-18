@@ -1,0 +1,433 @@
+<!-- Quick Start Guide - Open this file in a browser for a visual guide -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X'wafffle - Quick Start Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px;
+            background: #fff;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 4px solid #4ecdc4;
+            padding-left: 15px;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #4ecdc4;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px 5px 10px 0;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .demo-section {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧇 X'wafffle Quick Start Guide</h1>
+            <p class="subtitle">Modern Cafe Ordering System</p>
+        </header>
+
+        <main>
+            <!-- Getting Started Section -->
+            <section>
+                <h2>🚀 Getting Started in 5 Minutes</h2>
+                
+                <div class="step">
+                    <h3>Step 1: Open the Website</h3>
+                    <p>Simply double-click <code>index.html</code> in your file explorer, or open it in your browser.</p>
+                    <p>✅ <strong>No installation needed!</strong> No server required!</p>
+                </div>
+
+                <div class="step">
+                    <h3>Step 2: Set Your WhatsApp Number</h3>
+                    <p>Open <code>js/whatsapp.js</code> and find line 42:</p>
+                    <pre>const restaurantPhone = '1234567890'; // Update this!</pre>
+                    <p>Replace with your number (digits only). Examples:</p>
+                    <ul class="feature-list">
+                        <li>USA: <code>14155552671</code></li>
+                        <li>UK: <code>442071838750</code></li>
+                        <li>India: <code>919987654321</code></li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>Step 3: Test the Flow</h3>
+                    <ol>
+                        <li>Click "Explore Menu" button</li>
+                        <li>Add some items to cart</li>
+                        <li>Click cart icon (🛒)</li>
+                        <li>Proceed to checkout</li>
+                        <li>Fill in your details</li>
+                        <li>Click "Confirm Order & Pay on WhatsApp"</li>
+                    </ol>
+                </div>
+
+                <div class="success">
+                    <strong>✅ Success!</strong> WhatsApp will open with your formatted order ready to send. That's it!
+                </div>
+            </section>
+
+            <!-- Key Features Section -->
+            <section>
+                <h2>✨ Key Features</h2>
+                <ul class="feature-list">
+                    <li>✅ Complete menu management system</li>
+                    <li>✅ Shopping cart with persistent storage</li>
+                    <li>✅ Discount coupons (SAVE10, SAVE20)</li>
+                    <li>✅ Tax calculation (10% by default)</li>
+                    <li>✅ WhatsApp integration with formatted messages</li>
+                    <li>✅ Mobile responsive design</li>
+                    <li>✅ Toast notifications</li>
+                    <li>✅ Category filtering</li>
+                    <li>✅ Keyboard shortcuts (Ctrl+M, Ctrl+C, Ctrl+H)</li>
+                </ul>
+            </section>
+
+            <!-- Customization Section -->
+            <section>
+                <h2>🎨 Customization</h2>
+
+                <h3>Change Restaurant Name</h3>
+                <p>Replace "FoodHub" with your restaurant name in all HTML files:</p>
+                <pre>&lt;span class="logo-text">Your Restaurant Name&lt;/span&gt;</pre>
+
+                <h3>Change Colors</h3>
+                <p>Edit CSS variables in <code>css/style.css</code>:</p>
+                <pre>:root {
+    --primary-color: #ff6b6b;    /* Main red */
+    --secondary-color: #4ecdc4;  /* Teal accent */
+    --accent-color: #ffe66d;     /* Yellow accent */
+}</pre>
+
+                <h3>Add Menu Items</h3>
+                <p>Edit <code>MENU_ITEMS</code> array in <code>menu.html</code>:</p>
+                <pre>{
+    id: 18,
+    name: 'Pizza Margherita',
+    price: 12.99,
+    category: 'pizzas',
+    emoji: '🍕',
+    description: 'Classic pizza with fresh tomato'
+}</pre>
+
+                <h3>Change Tax Rate</h3>
+                <p>In <code>cart.html</code> and <code>checkout.html</code>, find:</p>
+                <pre>const tax = subtotal * 0.10;  // 10% tax</pre>
+                <p>Change <code>0.10</code> to your rate (e.g., <code>0.15</code> for 15%)</p>
+
+                <h3>Add Delivery Fee</h3>
+                <p>Add this in checkout totals calculation:</p>
+                <pre>const deliveryFee = 5.00;
+const total = subtotal + tax - discount + deliveryFee;</pre>
+            </section>
+
+            <!-- JavaScript Functions Section -->
+            <section>
+                <h2>⚙️ Available JavaScript Functions</h2>
+
+                <h3>Cart Functions (js/cart.js)</h3>
+                <ul>
+                    <li><code>getCart()</code> - Get current cart array</li>
+                    <li><code>addToCart(item)</code> - Add item to cart</li>
+                    <li><code>removeFromCart(itemId)</code> - Remove item from cart</li>
+                    <li><code>updateItemQuantity(itemId, qty)</code> - Update item quantity</li>
+                    <li><code>clearCart()</code> - Empty entire cart</li>
+                    <li><code>getCartCount()</code> - Get total items in cart</li>
+                    <li><code>getCartTotal()</code> - Get total cart price</li>
+                    <li><code>updateCartCount()</code> - Update cart badge on page</li>
+                </ul>
+
+                <h3>WhatsApp Functions (js/whatsapp.js)</h3>
+                <ul>
+                    <li><code>generateWhatsAppMessage(cart, name, phone, address, notes)</code> - Create formatted message</li>
+                    <li><code>getWhatsAppLink(message)</code> - Get wa.me link with message</li>
+                    <li><code>sendOrderViaWhatsApp(...)</code> - Open WhatsApp with order</li>
+                    <li><code>logOrderToSession(...)</code> - Save order to session</li>
+                    <li><code>getOrderHistory()</code> - Retrieve past orders</li>
+                </ul>
+
+                <h3>App Functions (js/app.js)</h3>
+                <ul>
+                    <li><code>showToast(message)</code> - Show notification popup</li>
+                    <li><code>formatCurrency(amount)</code> - Format as $XX.XX</li>
+                    <li><code>isValidPhone(phone)</code> - Validate phone number</li>
+                    <li><code>isValidEmail(email)</code> - Validate email</li>
+                    <li><code>isMobileDevice()</code> - Check if mobile browser</li>
+                    <li><code>printReceipt(...)</code> - Generate receipt</li>
+                </ul>
+            </section>
+
+            <!-- Coupon Section -->
+            <section>
+                <h2>🎟️ Coupon Management</h2>
+                <p>Coupons are managed in <code>cart.html</code>. Current codes:</p>
+                <pre>const COUPON_CODES = {
+    'SAVE10': 0.10,   // 10% discount
+    'SAVE20': 0.20    // 20% discount
+};</pre>
+                <p>To add more coupons, add them to the object:</p>
+                <pre>const COUPON_CODES = {
+    'SAVE10': 0.10,
+    'SAVE20': 0.20,
+    'SUMMER': 0.15,   // Add new coupon
+    'VIP30': 0.30     // 30% for VIPs
+};</pre>
+            </section>
+
+            <!-- Deployment Section -->
+            <section>
+                <h2>🌐 Deploy Your Website</h2>
+
+                <h3>Option 1: GitHub Pages (Free)</h3>
+                <div class="demo-section">
+                    <p>1. Create a GitHub account and repository</p>
+                    <p>2. Upload all files to repository</p>
+                    <p>3. Go to Settings → Pages → Deploy from branch</p>
+                    <p>4. Your site is live at: <code>username.github.io/repo-name</code></p>
+                </div>
+
+                <h3>Option 2: Netlify (Free)</h3>
+                <div class="demo-section">
+                    <p>1. Visit <a href="https://netlify.com" target="_blank">netlify.com</a></p>
+                    <p>2. Drag & drop your project folder</p>
+                    <p>3. Your site is live immediately with a custom domain option</p>
+                </div>
+
+                <h3>Option 3: Vercel (Free)</h3>
+                <div class="demo-section">
+                    <p>1. Connect your GitHub to <a href="https://vercel.com" target="_blank">vercel.com</a></p>
+                    <p>2. Import your repository</p>
+                    <p>3. Deploy with one click - automatic updates on each push</p>
+                </div>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section>
+                <h2>🔧 Troubleshooting</h2>
+
+                <h3>❓ WhatsApp Link Not Opening?</h3>
+                <div class="warning">
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li>Check that WhatsApp is installed on your device</li>
+                        <li>Verify phone number format in <code>whatsapp.js</code> (digits only, no +)</li>
+                        <li>On mobile, ensure WhatsApp app is installed</li>
+                        <li>On desktop, ensure WhatsApp Web is logged in</li>
+                    </ul>
+                </div>
+
+                <h3>❓ Cart Not Saving?</h3>
+                <div class="warning">
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li>Check if localStorage is enabled in browser</li>
+                        <li>Try a different browser</li>
+                        <li>Clear browser cache and refresh</li>
+                        <li>Check browser console for errors (F12)</li>
+                    </ul>
+                </div>
+
+                <h3>❓ Items Not Showing?</h3>
+                <div class="warning">
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li>Open browser console (F12) and check for errors</li>
+                        <li>Verify HTML file paths are correct</li>
+                        <li>Try refreshing the page (Ctrl+R)</li>
+                        <li>Check that all CSS and JS files are in correct folders</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Quick Links Section -->
+            <section>
+                <h2>🔗 Quick Links</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button onclick="window.location.href='index.html'">🧇 Go to Homepage</button>
+                    <button onclick="window.location.href='menu.html'">📋 View Menu</button>
+                    <button onclick="window.location.href='cart.html'">🛒 View Cart</button>
+                    <button onclick="alert('Find this file: js/whatsapp.js and change line 42')">⚙️ Set WhatsApp Number</button>
+                </div>
+            </section>
+
+            <!-- Tips Section -->
+            <section>
+                <h2>💡 Pro Tips</h2>
+                <ul class="feature-list">
+                    <li>Use real food images instead of emojis for production version</li>
+                    <li>Add restaurant operating hours on homepage</li>
+                    <li>Include delivery areas or restrictions</li>
+                    <li>Add payment options/terms in footer</li>
+                    <li>Test WhatsApp link on mobile devices</li>
+                    <li>Ask for customer reviews after orders</li>
+                    <li>Add popular items section on homepage</li>
+                    <li>Consider adding loyalty/rewards program</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>🧇 X'wafffle - Modern Cafe Ordering System | Built with HTML, CSS & JavaScript</p>
+            <p style="margin-top: 10px; opacity: 0.8;">No backend required • Free to customize • Perfect for small cafes & food businesses</p>
+        </footer>
+    </div>
+</body>
+</html>
